@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Lorem Cats</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="jquery.bxslider.min.js"></script>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" />
+		<link rel="stylesheet" href="jquery.bxslider.min.css" type="text/css" />
+		
+		<style type="text/css">
+			* { margin: 0; padding: 0; }
+			body { font-family: 'Roboto Condensed', sans-serif; font-size: 16px; }
+			
+			.bannerwrapper { position: relative; }
+			.bannerarrow { bottom: 0; color: #fff; position: absolute; top: 0; width: 2.8125rem; z-index: 1000; }
+			.bx-prev { cursor: w-resize; left: 0; }
+			.bx-next { cursor: e-resize; right: 0; }
+			
+			.bx-wrapper { border: 0; }
+			.bannerslide { background-position: center; background-repeat: no-repeat; background-size: cover; min-height: 15rem; position: relative; width: 100%; }
+			.bannerslide a { display: block; height: 100%; }
+			.bannertext { background-color: rgba(0,0,0,0.35); bottom: 0; color: #fff; font-size: 0.875rem; left: 0; padding: 0.625rem; position: absolute; right: 0; text-align: center; }
+			
+			@media (min-width: 954px) {
+				.bannerslide { height: 25rem; /* 400px */ }
+			}
+			
+			@media (max-width: 953px) {
+				.bannerslide { height: 18.75rem; /* 300px */ }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bannerwrapper">
+			<a class="bannerarrow bx-prev">&nbsp;</a>
+			<a class="bannerarrow bx-next">&nbsp;</a>
+			
+			<div class="banner bxslider">
+				<div class="bannerslide" style="background-image: url('./cats-q-c-1520-490-1.jpg');">
+					<a href="#">&nbsp;</a>
+					<div class="bannertext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum vel lorem in feugiat. Donec nec iaculis nibh. Aliquam sit.</div>
+				</div>
+				
+				<div class="bannerslide" style="background-image: url('./cats-q-c-1520-490-2.jpg');">
+					<a href="#">&nbsp;</a>
+					<div class="bannertext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum vel lorem in feugiat. Donec nec iaculis nibh. Aliquam sit.</div>
+				</div>
+				
+				<div class="bannerslide" style="background-image: url('./cats-q-c-1520-490-3.jpg');">
+					<a href="#">&nbsp;</a>
+					<div class="bannertext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum vel lorem in feugiat. Donec nec iaculis nibh. Aliquam sit.</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			jQuery.noConflict();
+			// Begin bxslider
+			slider = jQuery('.bxslider').bxSlider(
+			{
+				adaptiveHeight:	true,
+				auto:						true,
+				controls:				false,
+				pager:					false,
+				pause:					6000,
+				responsive:			true,
+				speed:					300,
+			});
+
+			if(slider.getSlideCount() == 1)
+			{
+				// Hide arrows for single slide
+				jQuery('.banner-arrow-left').hide();
+				jQuery('.banner-arrow-right').hide();
+			}
+
+			jQuery('.bx-next').on('click', function()
+			{
+				slider.goToNextSlide();
+			});
+
+			jQuery('.bx-prev').on('click', function()
+			{
+				slider.goToPrevSlide();
+			});
+			// End bxslider
+		</script>
+	</body>
+</html>
