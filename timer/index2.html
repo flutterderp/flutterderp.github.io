@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>timer</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700" rel="stylesheet" type="text/css">
+		<link href="fullcalendar.min.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="moment-with-locales.min.js" type="text/javascript"></script>
+		<script src="fullcalendar.min.js" type="text/javascript"></script>
+		
+		<style type="text/css">
+			* { margin: 0; padding: 0; }
+			body { background: #fff; color: #333; font-family: 'Roboto Condensed', sans-serif; font-size: 16px; }
+			.fc { margin: 1rem auto; width: 100%; }
+		</style>
+	</head>
+	<body>
+		<!-- Timer -->
+		<div id="calendar"></div>
+		
+		<!-- End timer -->
+		
+		<script>
+			// Instantiate timer
+			jQuery(document).ready()
+			{
+				jQuery('#calendar').fullCalendar(
+				{
+					// stuff
+					displayEventEnd: true,
+					editable: false,
+					header: {
+						left: 'prev,next today',
+						center: 'title',
+						right: 'month,agendaWeek,agendaDay'
+					},
+					events: {
+						url: '/~michael/timeisbutts/events.json'
+					}
+				});
+			};
+				
+		</script>
+	</body>
+</html>

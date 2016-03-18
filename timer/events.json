@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"title": "Eric – doing stuff",
+		"allDay": false,
+		"start": "2016-03-17 08:37:00",
+		"end": "2016-03-17 13:37:00",
+		"url": "",
+		"backgroundColor": "",
+		"borderColor": "#333"
+	},
+	{
+		"id": 15,
+		"title": "Drew – plotting",
+		"allDay": false,
+		"start": "2016-03-18 08:30:00",
+		"end": "2016-03-18 13:30:00",
+		"url": "",
+		"backgroundColor": "#f00",
+		"borderColor": "#333"
+	},
+	{
+		"id": 27,
+		"title": "Michael – doing stuff",
+		"allDay": false,
+		"start": "2016-03-17 08:37:00",
+		"end": "2016-03-17 13:37:00",
+		"url": "",
+		"backgroundColor": "",
+		"borderColor": "#333"
+	}
+]
