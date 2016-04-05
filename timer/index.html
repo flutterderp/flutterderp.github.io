@@ -4,47 +4,45 @@
 		<meta charset="utf-8">
 		<title>timer</title>
 		<link rel="icon" href="/asura.ico">
-		<link href="flipclock.css" rel="stylesheet" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="flipclock.min.js" type="text/javascript"></script>
+		<script src="tock.min.js" type="text/javascript"></script>
 		
 	</head>
 	<body>
 		<!-- Timer -->
-		<div class="clock-wrap"></div>
+		<div>
+			<button id="time_start">Start</button>
+			<button id="time_pause">Pause</button>
+			<button id="time_reset">Reset</button>
+		</div>
 		
-		<a class="button clock-control" data-clockstatus="start" href="#">Start</a>
-		<a class="button clock-control" data-clockstatus="stop" href="#">Stop</a>
+		<input type="text" name="time_spent" readonly="readonly">
 		<!-- End timer -->
 		
 		<script>
 			// Instantiate timer
-			var clock = jQuery('.clock-wrap').FlipClock(
-			{
-				// options
-				autoStart:				false,
-				countdown:				false,
-				defaultClockFace:	'HourlyCounter',
-			});
 			// Set existing time
-			clock.setTime(3623);
-			
-			
-			jQuery('.clock-control').click(function(e)
+			window.onload = function()
 			{
-				e.preventDefault();
-				switch(jQuery(this).data('clockstatus'))
+				var timer = new Tock();
+
+				jQuery('#start').on('click', function ()
 				{
-					case 'start' :
-						clock.start();
-						break;
-					case 'stop' :
-						clock.stop();
-						break;
-				}
+					timer.start(jQuery('input[name="time_spent"]').val());
+					jQuery('#start').hide();
+				});
 				
-			});
-			
+				jQuery('#pause').on('click', function ()
+				{
+					timer.pause();
+				});
+				
+				jQuery('#reset').on('click', function ()
+				{
+					timer.reset();
+					jQuery('input[name="time_spent"]').val('');
+				});
+			}
 			jQuery(document).ready(
 			{
 			
