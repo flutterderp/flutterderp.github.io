@@ -26,18 +26,18 @@
 			{
 				var timer = new Tock();
 
-				jQuery('#start').on('click', function ()
+				jQuery('#time_start').on('click', function ()
 				{
 					timer.start(jQuery('input[name="time_spent"]').val());
 					jQuery('#start').hide();
 				});
 				
-				jQuery('#pause').on('click', function ()
+				jQuery('#time_pause').on('click', function ()
 				{
 					timer.pause();
 				});
 				
-				jQuery('#reset').on('click', function ()
+				jQuery('#time_reset').on('click', function ()
 				{
 					timer.reset();
 					jQuery('input[name="time_spent"]').val('');
