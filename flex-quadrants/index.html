@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>beep boop</title>
+		<link rel="icon" href="/asura.ico">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i" rel="stylesheet">
+		<style type="text/css">
+			* { margin: 0; padding: 0; }
+			body { background: #fff; color: #333; font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.2; }
+			
+			.slideshow {
+				display: block;
+				height: 350px;
+				width: 100%;
+			}
+			
+			.slide {
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: inherit;
+				position: relative;
+			}
+			
+			.slidecaption {
+				align-items: center;
+				background-color: rgba(0,0,0,0.5);
+				color: #fff;
+				display: flex;
+				font-family: 'Playfair Display', serif;
+				position: absolute;
+				text-align: center;
+			}
+			
+			.slidecaption p { font-size: 2rem; width: 100%; }
+			.slidecaption.upperleft, .slidecaption.lowerleft { left: 0; right: 50%; }
+			.slidecaption.upperright, .slidecaption.lowerright { left: 50%; right: 0; }
+			.slidecaption.upperleft, .slidecaption.upperright { bottom: 50%; top: 0; }
+			.slidecaption.lowerleft, .slidecaption.lowerright { bottom: 0; top: 50%; }
+		</style>
+	</head>
+	<body>
+		<div class="slideshow">
+			<div class="slide" style="background-image: url('LoremIpsumText.jpg')">
+				<div class="slidecaption upperleft">
+					<p>“Lorem ipsum 🐌”</p>
+				</div>
+				
+				<!-- <div class="slidecaption lowerleft">
+					<p>“Lorem ipsum 🌮”</p>
+				</div> -->
+				
+				<div class="slidecaption lowerright">
+					<p>“Lorem ipsum 🐑”</p>
+				</div>
+				
+				<!-- <div class="slidecaption upperright">
+					<p>“Lorem ipsum 🍔”</p>
+				</div> -->
+			</div>
+		</div>
+	</body>
+</html>
