@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Floaty iframe things</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style>
+			* { margin: 0; padding: 0; }
+			body { background-color: #fff; color: #000; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal; }
+			p { margin: 0 0 1rem; }
+			
+			.hidden, hidden > * { height: 0; opacity: 0; visibility: hidden; }
+			.screenlinks { margin-top: 1rem; text-align: center; }
+			.screenlinks a { display: inline-block; margin: 0 7px; vertical-align: middle; }
+			.screenshots { margin: 1rem auto; position: relative; width: 75%; }
+			
+			.screenshot {
+				background-position: center; background-repeat: no-repeat; background-size: contain;
+				display: block;
+				margin: 0 auto;
+				position: relative;
+				transition: opacity 0.7s linear;
+			}
+			
+			.screenshot img { height: auto; width: 100%; }
+			
+			.dsktop {
+				width: 75%;
+			}
+			
+			.dsktop img {
+				clip-path: inset(6% 5.5% 26% 6%);
+				-moz-clip-path: inset(6% 5.5% 26% 6%);
+				-ms-clip-path: inset(6% 5.5% 26% 6%);
+				-o-clip-path: inset(6% 5.5% 26% 6%);
+				-webkit-clip-path: inset(6% 5.5% 26% 6%);
+			}
+			
+			.tablet { width: 30%; }
+			
+			.tablet img {
+				clip-path: inset(11% 9.5% 9.5% 9.5%);
+				-moz-clip-path: inset(11% 9.5% 9.5% 9.5%);
+				-ms-clip-path: inset(11% 9.5% 9.5% 9.5%);
+				-o-clip-path: inset(11% 9.5% 9.5% 9.5%);
+				-webkit-clip-path: inset(11% 9.5% 9.5% 9.5%);
+			}
+			
+			.mobile { width: 25%; }
+			
+			.mobile img {
+				clip-path: inset(9% 18.5% 8.5% 18.5%);
+				-moz-clip-path: inset(9% 18.5% 8.5% 18.5%);
+				-ms-clip-path: inset(9% 18.5% 8.5% 18.5%);
+				-o-clip-path: inset(9% 18.5% 8.5% 18.5%);
+				-webkit-clip-path: inset(9% 18.5% 8.5% 18.5%);
+			}
+			
+			@media (max-width: 639px)
+			{
+				.screenshots { margin-left: 0; margin-right: 0; width: 100vw; }
+				
+				.dsktop { width: 100%; }
+				.tablet { width: 75%; }
+				.mobile { width: 50%; }
+			}
+		</style>
+	</head>
+	<body>
+		
+		<p class="screenlinks">
+			<a href="" data-screen-type="dsktop"><i class="fa fa-2x fa-desktop"></i></a>
+			<a href="" data-screen-type="tablet"><i class="fa fa-2x fa-tablet"></i></a>
+			<a href="" data-screen-type="mobile"><i class="fa fa-2x fa-mobile"></i></a>
+		</p>
+		
+		<div class="screenshots">
+		  <div class="screenshot dsktop" style="background-image: url('frame_desktop.png');">
+		    <img src="https://placekitten.com/512/374" alt="cat">
+		  </div>
+
+			<div class="screenshot tablet hidden" style="background-image: url('frame_tablet.png');">
+				<img src="https://placekitten.com/231/317" alt="cat">
+			</div>
+			
+			<div class="screenshot mobile hidden" style="background-image: url('frame_mobile.png');">
+				<img src="https://placekitten.com/116/159" alt="cat">
+			</div>
+		</div>
+		
+	</body>
+	<script>
+		$(document).ready(function()
+		{
+			$('.screenlinks a').on('click', function(e)
+			{
+				e.preventDefault();
+				e.stopPropagation();
+				
+				clicked = $(this).data('screen-type');
+				
+				$('.screenshot:not(.'+clicked+'):visible').addClass('hidden');
+				$('.screenshot.'+clicked).removeClass('hidden');
+			});
+		});
+	</script>
+</html>
