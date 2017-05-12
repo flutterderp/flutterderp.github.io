@@ -2,16 +2,16 @@
 body { background-color: #fff; color: #000; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal; }
 p { margin: 0 0 1rem; }
 
-.hidden, hidden > * { display: none !important; height: 0; opacity: 0; visibility: hidden; }
+.hidden, .hidden * { display: none !important; }
 .screenlinks { margin-top: 1rem; text-align: center; }
 .screenlinks a { display: inline-block; margin: 0 7px; vertical-align: middle; }
 .screenshots {
 	font-size: 0;
-	margin: 1rem auto;
+	margin: 1rem 0;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	white-space: pre-line;
 }
 
@@ -23,7 +23,6 @@ p { margin: 0 0 1rem; }
 	margin: 0 auto;
 	position: relative;
 	text-align: left;
-	transition: opacity 0.7s linear;
 	vertical-align: top;
 	white-space: nowrap;
 }
@@ -51,6 +50,7 @@ p { margin: 0 0 1rem; }
 
 .dsktop { width: 75%; }
 .tablet { width: 35%; }
+.mobile { width: 25%; }
 .mobile, .tablet {
 	border: 10px solid #cfcfcf;
 	border-bottom-width: 30px;
@@ -59,19 +59,23 @@ p { margin: 0 0 1rem; }
 	box-sizing: border-box;
 	
 }
-.mobile .titlebar, .tablet .titlebar { display: none; }
-.mobile { width: 25%; }
+/*.mobile .titlebar, .tablet .titlebar { display: none; }*/
+
 
 .screenshot img { display: block; width: 100%; }
 
-@media screen and (min-width: 1024) {
+@media screen and (min-width: 1024px) {
 	
 }
 
-@media screen and (min-width: 640) and (max-width: 1023) {
-	
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+	.dsktop { width: 90%; }
+	.tablet { width: 50%; }
+	.mobile { width: 45%; }
 }
 
-@media screen and (max-width: 639) {
-	.mobile { width: 60%; }
+@media screen and (max-width: 639px) {
+	.dsktop { width: 100%; }
+	.tablet { width: 70%; }
+	.mobile { width: 55%; }
 }
