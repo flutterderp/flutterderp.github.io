@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta itemprop="author" content="flutterderp">
+    <title>Clip path – “fans”</title>
+
+    <!-- Reference utility: https://bennettfeely.com/clippy/ -->
+  </head>
+  <style>
+* { margin: 0; padding: 0; }
+body { background: #fefefe; color: #0a0a0a; font-size: 100%; line-height: normal; }
+main { height: 90vh; position: relative; }
+footer { background: #c0542d; color: #fefefe; padding: 20px 0; }
+footer > * { margin: 0 auto 20px; max-width: 75rem; }
+footer > *:last-child { margin-bottom: 0; }
+.copyarea { background: rgba(0,0,0,.05); height: 100%; margin: 0 auto; max-width: 75rem; position: relative; z-index: 1; }
+
+.fan__wrapper, .fan { background: #c0542d; }
+.fan__wrapper { bottom: -0.25vh; bottom: 0; height: 24vh; left: 0; position: absolute; width: 100%; }
+.fan { -webkit-clip-path: polygon(0 90%, 100% 0, 100% 100%, 0% 100%); clip-path: polygon(0 90%, 100% 0, 100% 100%, 0% 100%); min-height: 50px; left: 0; position: absolute; top: 0; width: 100%; }
+.fan__one { height: 100px; top: -92px; }
+.fan__two { height: 190px; opacity: 50%; top: -175px; }
+.fan__three { height: 300px; opacity: 25%; top: -275px; }
+
+@media screen and (min-width: 1410px) { main { margin-bottom: -0.15vh; } }
+  </style>
+  <body>
+    <main itemprop="mainContentOfPage">
+      <section class="copyarea">
+
+      </section>
+
+      <div class="fan__wrapper">
+        <div class="fan fan__one"></div>
+        <div class="fan fan__two"></div>
+        <div class="fan fan__three"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <p>Vivamus ac nibh sit amet arcu venenatis finibus ut id velit. Phasellus consequat lacus eros, quis porttitor libero auctor a. Etiam accumsan lacinia orci, a consectetur nisi cursus et. Quisque facilisis erat ligula, eu mollis lectus lobortis ut. Fusce ut metus vel dolor laoreet tincidunt a pretium arcu. Duis pharetra fringilla ultrices. Curabitur nec iaculis ante. Pellentesque lectus neque, tincidunt vitae varius vel, pharetra in nisi. Phasellus in euismod mauris. Morbi vitae tellus in ligula venenatis consectetur.</p>
+      </div>
+    </footer>
+  </body>
+</html>
