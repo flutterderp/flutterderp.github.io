@@ -11,28 +11,42 @@
   <style>
 * { margin: 0; padding: 0; }
 body { background: #fefefe; color: #0a0a0a; font-size: 100%; line-height: normal; }
-main { height: 90vh; position: relative; }
-footer { background: #c0542d; color: #fefefe; padding: 20px 0; }
-footer > * { margin: 0 auto 20px; max-width: 75rem; }
+p { margin: 0 auto 18px; }
+
+main { /* height: 90vh; */ margin-top: 2rem; position: relative; }
+footer { background: #c0542d; color: #fefefe; padding: 1.25rem 0; }
+footer > * { margin: 0 auto 1.25rem; max-width: 75rem; }
 footer > *:last-child { margin-bottom: 0; }
-.copyarea { background: rgba(0,0,0,.05); height: 100%; margin: 0 auto; max-width: 75rem; position: relative; z-index: 1; }
+.copyarea { background: rgba(0,0,0,.05); font-size: 1.125rem; height: 100%; margin: 0 auto; max-width: calc(75rem - 2.5rem); overflow: auto; padding: 18px 1.25rem; position: relative; z-index: 1; }
 
 .fan__wrapper, .fan { background: #c0542d; }
-.fan__wrapper { bottom: -0.25vh; bottom: 0; height: 24vh; left: 0; position: absolute; width: 100%; }
+.fan__wrapper { bottom: 0; height: 24vh; left: 0; position: absolute; width: 100%; z-index: -1; }
+.fan__wrapper.tallboy { height: 240vh; }
+#fanTrigger { position: absolute; top: -280px; }
 .fan { -webkit-clip-path: polygon(0 90%, 100% 0, 100% 100%, 0% 100%); clip-path: polygon(0 90%, 100% 0, 100% 100%, 0% 100%); min-height: 50px; left: 0; position: absolute; top: 0; width: 100%; }
 .fan__one { height: 100px; top: -92px; }
-.fan__two { height: 190px; opacity: 50%; top: -175px; }
-.fan__three { height: 300px; opacity: 25%; top: -275px; }
+.fan__two { height: 190px; opacity: 50%; top: -175px; top: 0; }
+.fan__three { height: 300px; opacity: 25%; top: -275px; top: 0; }
 
-@media screen and (min-width: 1410px) { main { margin-bottom: -0.15vh; } }
+@media screen and (min-width: 1401px) { main { margin-bottom: -0.15vh; } }
   </style>
   <body>
     <main itemprop="mainContentOfPage">
       <section class="copyarea">
-
+        <p>Phasellus eu pellentesque orci. Sed mauris ligula, consequat vel urna sed, eleifend consectetur ex. Nunc feugiat augue vitae risus facilisis, ut mollis orci elementum. Etiam vitae consectetur est, ac vestibulum tellus. Donec quis convallis massa, in laoreet arcu. Phasellus fermentum ligula metus, at convallis arcu bibendum eget. Morbi id velit sapien. Maecenas ex dolor, tincidunt eget pharetra et, congue in massa. Nulla facilisi. Proin suscipit tincidunt interdum. Sed aliquet nisl a est iaculis convallis.</p>
+        <p>Proin ac feugiat neque. Nunc volutpat porta lectus, ac malesuada nisl congue vitae. Donec risus nisl, eleifend id dui nec, cursus accumsan dui. Vivamus scelerisque purus id sapien convallis sollicitudin. Nunc vitae nibh posuere, tempus leo in, tempus leo. Vestibulum pellentesque fringilla neque id porta. Sed consequat felis metus, vel scelerisque lorem dapibus ac. Vestibulum venenatis elit eget lectus congue, ut luctus metus volutpat.</p>
+        <p>Pellentesque ut metus tellus. Praesent augue nisl, porta eget turpis eu, luctus posuere est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque condimentum eros ac urna pellentesque dapibus euismod sit amet ante. Etiam ut felis faucibus, mollis nunc a, suscipit metus. Duis sit amet lorem nulla. Duis mattis rutrum sem. Ut pharetra magna non nunc pellentesque sollicitudin. Sed pulvinar finibus augue vel tincidunt. Nulla aliquam, orci commodo suscipit porttitor, libero nisl eleifend nunc, sed laoreet elit nibh nec nibh. Nulla aliquam sodales justo, at rutrum tellus pharetra in. Nunc justo neque, tristique aliquam risus nec, euismod vestibulum magna.</p>
+        <p>Cras ornare mattis orci id tincidunt. Vestibulum vitae enim elit. Donec eget mauris non ex ornare facilisis eget sed ipsum. Sed libero dui, viverra eget orci vitae, sollicitudin rutrum tellus. Fusce vestibulum tempor varius. Duis et ligula purus. Etiam finibus, ante eget hendrerit accumsan, arcu dui egestas nibh, ut varius metus tellus at risus. Sed quis condimentum enim. Suspendisse tempus justo ac diam tincidunt porta. Sed at libero vitae leo tincidunt varius. In luctus ultrices erat, ac egestas leo venenatis blandit. Vestibulum aliquam mattis ligula. Suspendisse accumsan vulputate pharetra.</p>
+        <p>Phasellus pharetra ornare ullamcorper. Ut elementum neque pellentesque vehicula pulvinar. Aliquam mauris erat, commodo at mi vel, molestie faucibus ex. Integer ultricies condimentum lacus, quis venenatis diam pharetra sed. Pellentesque id est vel nisl condimentum elementum. Donec vel accumsan mi. Phasellus gravida eros et ipsum porttitor fermentum. Integer tortor ipsum, iaculis et erat eget, efficitur molestie neque. Proin fermentum id ante vel euismod. Phasellus pellentesque risus enim, ac aliquet ligula dignissim in. Sed cursus ante est, at gravida orci placerat vitae. Fusce a venenatis leo, at lobortis eros. Pellentesque gravida venenatis velit nec maximus. Vivamus sed enim metus.</p>
+        <p>Donec non lacus ligula. Vivamus sed blandit justo. Maecenas efficitur, dolor a vehicula tincidunt, ante velit cursus erat, sit amet rutrum mauris arcu in tellus. Aliquam vehicula at odio sed porta. Sed quis auctor risus, at euismod mauris. Phasellus porta sit amet leo sit amet vestibulum. Quisque et orci bibendum, efficitur nunc quis, pellentesque odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies tincidunt vehicula. Duis vehicula felis in metus tempor lacinia. Integer dapibus ultricies lorem eget laoreet. Maecenas commodo dolor risus, ac bibendum erat eleifend ut. Nam et nulla nec magna euismod dictum vel eu libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Aliquam consequat consequat quam, a facilisis urna lobortis ac. Nullam molestie sit amet ligula sed tincidunt. Donec a ex in magna interdum sagittis vitae mattis lorem. Nullam ultrices eros dui, eu porttitor lorem iaculis quis. Aliquam dapibus libero ac tellus pulvinar, eu hendrerit purus mollis. Etiam augue neque, rutrum ut dolor in, cursus gravida ipsum. Nullam efficitur, ligula ut convallis posuere, nunc lectus luctus leo, ut congue diam neque ac arcu.</p>
+        <p>Sed consectetur eget sapien id lacinia. Curabitur condimentum at lorem eget semper. Etiam sed ipsum mi. In hac habitasse platea dictumst. Donec in sagittis orci. Nulla ipsum dolor, cursus et porta ac, consequat eget lorem. Vivamus a semper risus. In aliquam nec leo et placerat.</p>
+        <p>Aliquam id arcu eget orci tincidunt suscipit at nec diam. Donec suscipit tortor eget risus tempus ultrices. Integer facilisis mi eu ante bibendum interdum vitae at magna. Morbi aliquet bibendum felis at tempor. Fusce nec porta mi. Vestibulum mi turpis, iaculis sed lorem id, gravida dignissim ante. Maecenas euismod, massa quis vestibulum pretium, odio ante blandit libero, eu auctor justo massa vel purus. Vivamus venenatis euismod purus vitae feugiat. Nunc eleifend eu odio dignissim dictum. Vestibulum consequat, orci quis aliquam lobortis, eros neque eleifend nisl, non pulvinar massa velit eu turpis.</p>
+        <p>Suspendisse et nulla eu urna pretium pretium. Morbi maximus erat quis pellentesque ullamcorper. Vestibulum blandit, nisi vel vulputate dictum, urna lectus bibendum massa, sit amet congue urna diam in ipsum. Nulla et sapien ut felis feugiat pulvinar in a massa. In aliquet vitae magna et sodales. Vestibulum nec ipsum ut lacus fringilla hendrerit quis sit amet est. Phasellus eget ligula tempor lectus dictum laoreet. Morbi tristique arcu mauris, sit amet lobortis mi rutrum a. Suspendisse fermentum velit libero, ut blandit felis auctor eget. Maecenas quis est non neque viverra elementum. Nulla nec feugiat neque. Vestibulum lacinia id dolor ac commodo. Fusce viverra faucibus nisl sit amet lacinia.</p>
       </section>
 
       <div class="fan__wrapper">
+        <div id="fanTrigger"></div>
         <div class="fan fan__one"></div>
         <div class="fan fan__two"></div>
         <div class="fan fan__three"></div>
@@ -44,5 +58,35 @@ footer > *:last-child { margin-bottom: 0; }
         <p>Vivamus ac nibh sit amet arcu venenatis finibus ut id velit. Phasellus consequat lacus eros, quis porttitor libero auctor a. Etiam accumsan lacinia orci, a consectetur nisi cursus et. Quisque facilisis erat ligula, eu mollis lectus lobortis ut. Fusce ut metus vel dolor laoreet tincidunt a pretium arcu. Duis pharetra fringilla ultrices. Curabitur nec iaculis ante. Pellentesque lectus neque, tincidunt vitae varius vel, pharetra in nisi. Phasellus in euismod mauris. Morbi vitae tellus in ligula venenatis consectetur.</p>
       </div>
     </footer>
+
+    <script src="_assets/js/ScrollMagic.min.js"></script>
+    <script src="_assets/js/TweenMax.min.js"></script>
+    <script src="_assets/js"></script>
+    <script>
+      // bottom fan – parallax effect
+      if(typeof ScrollMagic !== 'undefined' && typeof ScrollMagic === 'function') {
+        const controller = new ScrollMagic.Controller()
+
+        let pf2     = document.querySelector('.fan__two'),
+            pf3     = document.querySelector('.fan__three'),
+            trigger = document.getElementById('fanTrigger')
+
+        // bottom fan
+        try {
+          let pf2Tween = new TweenMax.to(pf2, 0.25, { top: '-175px' }),
+              pf3Tween = new TweenMax.to(pf3, 0.35, { top: '-275px' })
+
+          pf2Scene = new ScrollMagic.Scene({
+            triggerElement: trigger,
+          }).setTween(pf2Tween).addTo(controller)
+
+          pf3Scene = new ScrollMagic.Scene({
+            triggerElement: trigger,
+          }).setTween(pf3Tween).addTo(controller)
+        } catch(err) {
+          console.error('Failed to add parallax effect to bottom fan with error: '+err.toString())
+        }
+      }
+    </script>
   </body>
 </html>
