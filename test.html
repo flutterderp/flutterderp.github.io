@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Suspendisse pellentesque commodo felis, sit amet dignissim elit pharetra nec. Curabitur at gravida magna, sit amet porttitor nulla. Maecenas pretium tempor eros maximus semper. Nullam ut enim ac nibh imperdiet pulvinar. Integer ut mi eu velit gravida efficitur a eu arcu. Nam tempor justo ipsum, at pretium ex consequat in. Nam scelerisque porta mi, aliquam hendrerit orci mattis nec. Mauris et nulla elit. Nunc id nisi sem. Aliquam laoreet magna nisi, id tristique nunc malesuada a. Nam porta ipsum velit, vel consequat augue porttitor at.</p>
+    <p>Phasellus vitae lectus est. Morbi at ligula a augue ornare dignissim. Nunc quis libero ac eros vulputate laoreet. Pellentesque sit amet elit at ligula porttitor scelerisque. Aliquam eleifend arcu et augue hendrerit, quis vulputate nulla tempor. Maecenas felis est, tempor ut magna quis, accumsan malesuada sem. Nullam vestibulum eleifend mi at placerat. Phasellus fermentum leo a rhoncus rhoncus. Phasellus leo augue, ullamcorper at sapien non, hendrerit euismod elit.</p>
+    <ul>
+      <li><a href="https://reactjs.org/docs/add-react-to-a-website.html" target="_blank" rel="noopener">Add React to a Website</a></li>
+      <li>Idea(s) for storing/passing JSON data to the React component: <a href="https://stackoverflow.com/q/15838593/1896325" target="_blank" rel="noopener">https://stackoverflow.com/q/15838593/1896325</a></li>
+    </ul>
+
+    <div class="react_container" data-commentid="1" data-gallery="testGallery"></div>
+    <script id="testGallery" type="application/json">
+      {"image1": {"url":"path/to/image.jpg", "caption":""}, "image2": {"url":"path/to/image.jpg", "caption":""}}
+    </script>
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+    <script>
+'use strict'
+
+const e = React.createElement
+
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { liked: false }
+  }
+
+  render() {
+    if (this.state.liked) {
+      // let g = JSON.parse(this.props.galleryItems.innerText)
+      let g = this.props.galleryItems.innerText
+
+      return 'You liked comment #' + this.props.commentID + ". " + g
+    }
+
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'Like'
+    )
+  }
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.react_container').forEach(domContainer => {
+    const galleryID = domContainer.dataset.gallery.toString(),
+          commentID    = parseInt(domContainer.dataset.commentid, 10)
+
+    let galleryItems = document.getElementById(galleryID)
+
+    ReactDOM.render(
+      e(LikeButton, {galleryItems: galleryItems, commentID: commentID}),
+      domContainer
+    )
+  })
+})
+    </script>
+  </body>
+</html>
