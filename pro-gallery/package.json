@@ -1,0 +1,94 @@
+{
+  "publishScoped": false,
+  "private": false,
+  "name": "pro-gallery",
+  "version": "3.1.13",
+  "sideEffects": [
+    "./src/components/styles/gallery.scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wix/pro-gallery.git"
+  },
+  "author": {
+    "name": "Guy Sopher",
+    "email": "guysopher@gmail.com"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "watch": "npm run start",
+    "start": "tsc -w && npm run css-watch",
+    "build": "tsc && tsc -p tsconfig-esm.json && npm run css-compile",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css src/components/styles/gallery.scss:dist/statics/main.css",
+    "css-watch": "sass --watch src/components/styles/gallery.scss:dist/statics/main.css",
+    "test": "jest --testPathIgnorePatterns '.*/e2e/.*.e2e.spec.js' --silent",
+    "test:e2e-all": "jest --testPathPattern='.*/e2e/.*.e2e.spec.js'",
+    "test:e2e-layouts": "jest --testPathPattern='.*/e2e/layouts/.*.e2e.spec.js'",
+    "test:e2e-styleParams": "jest --testPathPattern='.*/e2e/styleParams/.*.e2e.spec.js'",
+    "test:e2e-integration": "jest --testPathPattern='.*/e2e/integration/.*.e2e.spec.js'",
+    "test:e2e-ssr": "jest --setupFiles=./tests/ssr-config.js --testPathPattern='.*/e2e/ssr/.*.e2e.spec.js'",
+    "lint": "eslint \"{src,tests}/**/*.{js,jsx,ts}\"",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "dependencies": {
+    "@vimeo/player": "2.8.2",
+    "hls.js": "^0.14.12",
+    "pro-gallery-lib": "3.1.13",
+    "pro-layouts": "3.1.13",
+    "react-player": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "chai": "^4.1.2",
+    "chai-spies": "^0.7.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-15.4": "^1.0.4",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "jest-image-snapshot": "^2.11.1",
+    "jest-stare": "^2.2.0",
+    "prettier": "^2.1.2",
+    "puppeteer": "^1.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sass": "^1.29.0",
+    "sinon": "^6.0.0",
+    "ts-jest": "^26.4.4",
+    "tslib": "^2.1.0",
+    "typescript": "4.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/js-with-ts",
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/tests/drivers/mocks/stylesImportMock.js"
+    },
+    "reporters": [
+      "default",
+      "<rootDir>/tests/drivers/customReporter.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/dist",
+      "<rootDir>/target"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/drivers/mocks/jest-setup.js",
+      "<rootDir>/tests/environment-setup.js"
+    ]
+  }
+}
